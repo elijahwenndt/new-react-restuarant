@@ -2,9 +2,12 @@ import axios from 'axios'
 import { useState, useEffect } from 'react';
 import React from "react";
 // import Cards from './Cards';
+import Dinner from './Dinner'
+import Breakfast from './Breakfast'
+import Lunch from './Lunch'
 
 export default function App() {
-    // const [ page, setPage] = useState('home')
+    const [ page, setPage] = useState('Breakfast')
     const [data, setData] = useState([])
     useEffect(() => {
         async function getPost() {
@@ -14,72 +17,18 @@ export default function App() {
         getPost();
         
     }, [])
+    
     console.log(data)
     
-    let dFoodFilter = data.filter(dinner =>
-        dinner.category.title === 'Dinner'
-      );
-      console.log(dFoodFilter)
-    let dinnerItems = []
-    for (let i=0; i<dFoodFilter.length; i++){
-        dinnerItems.push(
-            
-<>
-    <div className = 'container'>
-                <div className = 'row'>
-                    <div className = 'col-lg-4 col-md-12'>
-                        <div className="card"> 
-                            <div className="card-body">
-                                <h3 className="card-title text-center ">{dFoodFilter[i].title}</h3>
-                                <h5 className="card-text text-center">{dFoodFilter[i].price}</h5>
-                                <div className="card-text text-center">{dFoodFilter[i].description}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </> 
-
-            
+   
+    if (data.length != 0) {
+        return (
+            <>
+            <Breakfast data={data} page={setPage}/>
+            <Lunch data={data}/>
+            <Dinner data={data}/>
+            </>
         )
-       
-    }
-    return <>{dinnerItems}</>    
-//     if (data.length != 0) {
-//         return (
-//             <Cards
-//             title = {data[0].title}
-//             price = {data[0].price}
-//             description = {data[0].description}
-//             />
-            
-         
-//         )
-  
-    
-// }
+             
 }
-
-// function Cards({
-//     title,
-//     price,
-//     description
-//     }) {
-//     return(
-//     <>
-//     <div className = 'container'>
-//                 <div className = 'row'>
-//                     <div className = 'col-lg-6 col-md-12'>
-//                         <div className="card"> 
-//                             <div className="card-body">
-//                                 <h3 className="card-title text-center ">{title}</h3>
-//                                 <h5 className="card-text text-center">{price}</h5>
-//                                 <div className="card-text text-center">{description}</div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//     </> 
-//     )
-// }
+}
