@@ -1,15 +1,14 @@
 export default function LunchList (props) {
     
     let lFoodFilter = props.data.filter(lunch =>
-        lunch.category.title === 'Breakfast'
+        lunch.category.title === 'Lunch'
     );
     
     let lunchItems = []
     for (let i=0; i<lFoodFilter.length; i++){
         lunchItems.push(
             
-    <>
-    <div className = 'container'>
+    <div className = 'container' key={lFoodFilter[i].id}>
                 <div className = 'row justify-content-center'>
                     <div className = 'col-6'>
                         <div className="card"> 
@@ -22,7 +21,7 @@ export default function LunchList (props) {
                     </div>
                 </div>
             </div>
-    </> 
+
 
             
         )
