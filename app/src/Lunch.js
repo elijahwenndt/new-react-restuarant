@@ -1,6 +1,6 @@
 export default function LunchList (props) {
     
-    let lFoodFilter = props.data.filter(lunch =>
+    let lFoodFilter = props.potato.filter(lunch =>
         lunch.category.title === 'Lunch'
     );
     

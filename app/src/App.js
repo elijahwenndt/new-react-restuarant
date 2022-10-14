@@ -7,35 +7,36 @@ import Meal from "./Meal";
 import Lunch from "./Lunch";
 import Dessert from "./Dessert";
 import Buttons from "./Buttons";
+import Spinner from "./Spinner"
 
 export default function App() {
   const [page, setPage] = useState("Breakfast");
   const [data, setData] = useState([]);
   useEffect(() => {
-    async function getPost() {
+    async function getData() {
       const response = await axios.get(
         "https://astute-baton-362318.ue.r.appspot.com/api/json/"
       );
       setData(response.data);
     }
-    getPost();
+    getData();
   }, []);
-
-  const mealOptions = ["Breakfast", "Lunch", "Dinner", "Dessert"];
+  console.log(data)
+  const mealOptions = ["Breakfast", "Lunch", "Dinner", "Dessert", "Side", 'Appetizer'];
 
   function handleClick(text) {
     setPage(text);
   }
 
   if (data.length === 0)
-    return <div className="loading">Give it a dang second...</div>;
+    return <Spinner />
   //thank you josh
   return (
     <>
       <div className="container">
         <div className="text-center">
           {mealOptions.map((mealOption) => (
-            <Buttons text={mealOption} handleClick={handleClick} />
+            <Buttons text={mealOption} handleClick={handleClick} key={[i]}/>
           ))}
           {/* <Buttons text='Breakfast' handleClick={handleClick} /> 
             <Buttons text='Lunch' handleClick={handleClick} />
@@ -46,7 +47,7 @@ export default function App() {
           <Meal data={data} page={page} />
 
           {/* {page == 'Breakfast' && <Breakfast data={data} page={page}/>} */}
-          {/* {page == 'Lunch' && <Lunch data={data} />}
+          {/* {page == 'Lunch' && <Lunch potato={data} />}
                 {page == 'Dinner' && <Dinner data={data} />}
                 {page == 'Dessert' && <Dessert data={data} />} */}
         </div>

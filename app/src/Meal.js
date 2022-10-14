@@ -1,9 +1,9 @@
-export default function BreakfastList(props) {
+export default function MealList(props) {
   //    const {text,
   //     handleClick} = props
-
-  let bFoodFilter = props.data.filter(
-    (breakfast) => breakfast.category.title === props.page
+  console.log(props.data)
+  let FoodFilter = props.data.filter(
+    (meal) => meal.category.title === props.page
   );
 
   // let breakfastItems = []
@@ -23,11 +23,11 @@ export default function BreakfastList(props) {
   // }
   return (
     <>
-      {bFoodFilter.map((entree) => {
+      {FoodFilter.map((entree) => {
         console.log(entree);
         return (
-          <div className="col-md-6 col-sm-12 d-flex align-items-stretch my-3">
-            <div className="card w-100" key={entree.id}>
+          <div className="col-md-6 col-sm-12 d-flex align-items-stretch my-2" key={entree.id}>
+            <div className="card w-100">
               <div className="card-body">
                 <h3 className="card-title text-center ">{entree.title}</h3>
                 <h5 className="card-text text-center">{entree.price}</h5>
