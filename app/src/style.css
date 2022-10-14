@@ -1,0 +1,8 @@
+body {
+    background: url("frenchbackground.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.hover:hover {
+    cursor: pointer;
+}

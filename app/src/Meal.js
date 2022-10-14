@@ -1,7 +1,7 @@
 export default function MealList(props) {
   //    const {text,
   //     handleClick} = props
-  console.log(props.data)
+  
   let FoodFilter = props.data.filter(
     (meal) => meal.category.title === props.page
   );
@@ -24,10 +24,10 @@ export default function MealList(props) {
   return (
     <>
       {FoodFilter.map((entree) => {
-        console.log(entree);
+        
         return (
           <div className="col-md-6 col-sm-12 d-flex align-items-stretch my-2" key={entree.id}>
-            <div className="card w-100">
+            <div className="card w-100 bg-light bg-opacity-75">
               <div className="card-body">
                 <h3 className="card-title text-center ">{entree.title}</h3>
                 <h5 className="card-text text-center">{entree.price}</h5>

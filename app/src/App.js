@@ -8,6 +8,8 @@ import Lunch from "./Lunch";
 import Dessert from "./Dessert";
 import Buttons from "./Buttons";
 import Spinner from "./Spinner"
+import Header from './Header'
+
 
 export default function App() {
   const [page, setPage] = useState("Breakfast");
@@ -21,7 +23,7 @@ export default function App() {
     }
     getData();
   }, []);
-  console.log(data)
+  
   const mealOptions = ["Breakfast", "Lunch", "Dinner", "Dessert", "Side", 'Appetizer'];
 
   function handleClick(text) {
@@ -33,10 +35,11 @@ export default function App() {
   //thank you josh
   return (
     <>
+      <Header />
       <div className="container">
-        <div className="text-center">
+        <div className="row text-center">
           {mealOptions.map((mealOption) => (
-            <Buttons text={mealOption} handleClick={handleClick} key={[i]}/>
+            <Buttons text={mealOption} handleClick={handleClick}/>
           ))}
           {/* <Buttons text='Breakfast' handleClick={handleClick} /> 
             <Buttons text='Lunch' handleClick={handleClick} />

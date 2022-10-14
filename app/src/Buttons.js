@@ -1,7 +1,9 @@
 export default function Buttons(props) {
     return(
-        <button className ='btn btn-primary text-center' onClick={() => props.handleClick(props.text)}>
-            {props.text}
-        </button>
+        
+            <h5 className ='col-2 text-center text-white text-opacity-75 hover' onClick={() => props.handleClick(props.text)}>
+                {props.text}
+            </h5>
+        
     )
 }
