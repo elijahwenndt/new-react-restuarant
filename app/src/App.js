@@ -9,10 +9,10 @@ import Dessert from "./Dessert";
 import Buttons from "./Buttons";
 import Spinner from "./Spinner"
 import Header from './Header'
-
+import Home from './Home'
 
 export default function App() {
-  const [page, setPage] = useState("Breakfast");
+  const [page, setPage] = useState("Home");
   const [data, setData] = useState([]);
   useEffect(() => {
     async function getData() {
@@ -35,7 +35,7 @@ export default function App() {
   //thank you josh
   return (
     <>
-      <Header />
+      <Header text='Home' handleClick={handleClick}/>
       <div className="container">
         <div className="row text-center">
           {mealOptions.map((mealOption) => (

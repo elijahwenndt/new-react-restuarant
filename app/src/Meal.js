@@ -1,7 +1,13 @@
-export default function MealList(props) {
+import Home from './Home'
+
+export default function Meal(props) {
   //    const {text,
   //     handleClick} = props
-  
+  if (props.page === "Home") {
+    return (
+      <Home />
+    )
+  }
   let FoodFilter = props.data.filter(
     (meal) => meal.category.title === props.page
   );

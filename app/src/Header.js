@@ -1,8 +1,8 @@
-export default function Header() {
+export default function Header(props) {
     return (
     <div className="container my-3">
-        <div className="row text-center">
-            <div className="col-4">LOGO</div>
+        <div className="row text-center align-items-center hover" onClick={() => props.handleClick(props.text)}>
+            <div className="col-4">HOME</div>
             <h1 className="col-4 fst-italic">Faire réagir la nourriture</h1>
             <div className="col-4">Open from 9-2 and 5-10 daily</div>
         </div>
