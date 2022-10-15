@@ -17,7 +17,7 @@ export default function Meal(props) {
             key={entree.id}
           >
             <div className="card w-100 bg-light bg-opacity-75">
-              <div className="card-body">
+              <div className="card-body fst-italic">
                 <h3 className="card-title text-center ">{entree.title}</h3>
                 <h5 className="card-text text-center">{entree.price}</h5>
                 <div className="card-text text-center align-items-center">
