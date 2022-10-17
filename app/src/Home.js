@@ -1,3 +1,4 @@
+//homepage that displays when state is set to home
 export default function HomePage() {
   return (
     <div className="row justify-content-center">
@@ -25,7 +26,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <div className="col-12 d-flex align-items-stretch mb-4">
+      <div className="col-12 d-flex align-items-stretch my-2">
         <div className="card w-100 bg-light bg-opacity-75">
           <div className="card-body fst-italic">
             <h3 className="card-title text-center my-2">

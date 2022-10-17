@@ -1,3 +1,4 @@
+//passes in the onclick props onto buttons
 export default function Buttons(props) {
   return (
     <h5
