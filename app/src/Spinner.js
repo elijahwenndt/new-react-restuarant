@@ -1,3 +1,4 @@
+//makes the spinner
 export default function Spinner() {
   return (
     <div className="container">
