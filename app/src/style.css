@@ -6,3 +6,7 @@ body {
 .hover:hover {
     cursor: pointer;
 }
+
+.cursive {
+    font-family: 'Dancing Script', cursive;
+}
