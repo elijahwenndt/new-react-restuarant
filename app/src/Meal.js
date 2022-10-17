@@ -12,7 +12,7 @@ export default function Meal(props) {
 //main return for the cards. maps over the new filtered data and returns each index of the array styled within its own card
   return (
     <>
-      {FoodFilter.map((entree) => {
+      {FoodFilter.map((entree, i) => {
         return (
           <div
             className="col-md-6 col-sm-12 d-flex align-items-stretch my-2"
