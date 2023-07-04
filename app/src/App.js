@@ -16,7 +16,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       const response = await axios.get(
-        "https://8000-elijahwennd-backendbist-07vppabwkqr.ws-us75.gitpod.io/bistro/"
+        "https://8000-elijahwennd-backendbist-821e6acu6l9.ws-us101.gitpod.io/menuitems/"
       );
       setData(response.data);
     }
